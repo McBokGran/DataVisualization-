@@ -1,0 +1,26 @@
+
+.dashboard .one {
+  width: 100%;
+}
+
+.dashboard .two {
+  width: 50%;
+}
+
+.dashboard .three {
+  width: 33%;
+}
+
+.dashboard {
+  background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard .two {
+    width: 100%;
+  }
+
+  .dashboard .three {
+    width: 100%;
+  }
+}

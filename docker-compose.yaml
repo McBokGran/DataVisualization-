@@ -1,0 +1,47 @@
+version: "3.8"
+services:
+  metadb:
+    image: postgres
+    container_name: metadb
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    networks:
+      - airflow
+    restart: unless-stopped
+    volumes:
+      - ./airflow/airflowdata:/var/lib/postgresql/data
+  scheduler:
+    container_name: scheduler
+    image: apache/airflow
+    command: scheduler
+    depends_on:
+      - metadb
+    networks:
+      - airflow
+    restart: unless-stopped
+    volumes:
+      - ./airflow/airflow-home:/opt/airflow
+      - ./airflow/datafiles:/opt/datafiles
+      - ./airflow/temp:/opt/temp
+  webserver:
+    container_name: webserver
+    image: apache/airflow
+    command: webserver
+    depends_on:
+      - metadb
+    networks:
+      - airflow
+    ports:
+      - 8081:8080
+    restart: unless-stopped
+    volumes:
+      - ./airflow/airflow-home:/opt/airflow
+      - ./airflow/datafiles:/opt/datafiles
+      - ./airflow/temp:/opt/temp
+    environment:
+      - _AIRFLOW_WWW_USER_CREATE=admin
+      - _AIRFLOW_WWW_USER_PASSWORD=admin
+networks:
+  airflow:

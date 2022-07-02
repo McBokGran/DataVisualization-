@@ -1,0 +1,45 @@
+[{
+      "name": "canvas",
+      "canvas": 0.012313
+    },
+    {
+      "name": "film",
+      "film": 0.12903174
+    },
+    {
+      "name": "heavybanner",
+      "heavybanner": 0.049000732
+    },
+    {
+      "name": "heavypaper",
+      "heavypaper": 0.058691087
+    },
+    {
+      "name": "lightbanner",
+      "lightbanner": 0.071714179
+    },
+    {
+      "name": "lightpaper",
+      "lightpaper": 0.7199934
+    },
+    {
+      "name": "monomericvinyl",
+      "monomericvinyl": 0.065339365
+    },
+    {
+      "name": "paper",
+      "paper": 0.049000732
+    },
+    {
+      "name": "polymericvinyl",
+      "polymericvinyl": 0.7199934
+    },
+    {
+      "name": "textile",
+      "textile": 0.058691087
+    },
+    {
+      "name": "unknown",
+      "unknown": 0.058691087
+    }
+  ]
